@@ -10,18 +10,12 @@ var config = {
     output: {
         path: DIST_DIR + "/app",
         filename: "bundle.js",
-        publicPath: "/app/"
-    },
-    devServer: {
-        contentBase: "./dist",  //以public为根目录提供文件
-        colors: true,
-        historyApiFallback: true,
-        inline: true
+        publicPath: "/"
     },
     plugins: [
       new htmlWebPackPlugin({
           template:'./src/index.html',
-          filename:'../index.html',
+          filename:'index.html',
           minify:{
             removeComments:true
           }
