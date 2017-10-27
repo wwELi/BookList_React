@@ -12,6 +12,7 @@ export class HeaderTop extends React.Component{
 			content:"1231"	
 		}
 		this.isShow = false;
+		this.showContent = this.showContent.bind(this);
 	}
     
     searchList(){
@@ -20,7 +21,7 @@ export class HeaderTop extends React.Component{
         this.isShow ? (ele.style.display="none") : (ele.style.display="");
         this.isShow = !this.isShow;
     }
-
+    
     showContent(evet){
         let value = evet.target.value;
         this.props.contentValue(value);
@@ -32,5 +33,12 @@ export class HeaderTop extends React.Component{
         <img src={searchImg} style={{float:"right",marginRight:"50px",width:"40px",height:"40px"}} onClick={()=>this.searchList()} />
 		<input onChange={(evet)=>this.showContent(evet)} ref="inputSearch" style={{width:"150px",height:"20px",float:"right",marginRight:"40px",marginTop:"8px",display:"none"}}/>
 		</div>
+	}
+}
+function test(target, name, desc){
+	const oldvalue = desc.value;
+	desc.value = (e) => {
+		console.log('hahahaha...');
+		return oldvalue(e);
 	}
 }

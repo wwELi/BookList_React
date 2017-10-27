@@ -23,12 +23,9 @@ var config = {
     module: {
         loaders: [
             {
-                test: /\.js?/,
+                test: /\.(js|jsx)$/,
                 include: SRC_DIR,
-                loader: "babel-loader",
-                query: {
-                    presets: ["react", "es2015", "stage-2"]
-                }
+                loaders: ['babel-loader']
             },
             {
                 test: /\.*css$/,
