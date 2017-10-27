@@ -15,7 +15,7 @@ var config = {
     plugins: [
       new htmlWebPackPlugin({
           template:'./src/index.html',
-          filename:'index.html',
+          filename:'./index.html',
           minify:{
             removeComments:true
           }
